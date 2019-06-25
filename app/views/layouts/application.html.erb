@@ -9,6 +9,14 @@
   </head>
 
   <body>
+  <%# ==========deviseのフラッシュメッセージ========== %>
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
+  <% if flash[:alert] %>
+    <p><%= flash[:alert] %></p>
+  <% end %>
+  <%# ==========ここまで========== %>
     <%= yield %>
   </body>
 </html>
