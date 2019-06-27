@@ -20,6 +20,12 @@ https://rails-kanbanapp-201906.herokuapp.com
 ```
 $ cd kanban
 $ rails s
+
+$ git fetch
+$ git branch -a
+$ git diff remotes/origin/master
+$ git pull origin master
+
 $ git checkout -b [ブランチ名]
 ```
 

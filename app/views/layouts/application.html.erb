@@ -3,20 +3,24 @@
   <head>
     <title>Kanban</title>
     <%= csrf_meta_tags %>
-
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <%# ==========deviseのフラッシュメッセージ========== %>
-  <% if flash[:notice] %>
-    <p><%= flash[:notice] %></p>
-  <% end %>
-  <% if flash[:alert] %>
-    <p><%= flash[:alert] %></p>
-  <% end %>
-  <%# ==========ここまで========== %>
+    <% if flash[:notice] %>
+      <div class="alert alert-info"><%= flash[:notice] %></div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger"><%= flash[:alert] %></div>
+    <% end %>
+
+    <% if user_signed_in? %>
+      <%= render partial: "layouts/header" %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
