@@ -1,24 +1,43 @@
-# README
+# Kanban App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## 概要
+タスク管理のためのアプリ
 
-* Ruby version
 
-* System dependencies
+## 環境
 
-* Configuration
+開発（Cloud9: /kanban/kanban）
+https://dfd909104a2c4c7c964fa06d5b09a045.vfs.cloud9.us-east-2.amazonaws.com/
 
-* Database creation
+本番（Heroku）
+https://rails-kanbanapp-201906.herokuapp.com
 
-* Database initialization
 
-* How to run the test suite
+## コマンド
 
-* Services (job queues, cache servers, search engines, etc.)
+準備
+```
+$ cd kanban
+$ rails s
+$ git checkout -b [ブランチ名]
+```
 
-* Deployment instructions
+コミットとマージ
+```
+$ git add -A
+$ git commit -am "[コミットメッセージ]"
+$ git status
+$ git checkout master
+$ git merge [ブランチ名]
+```
 
-* ...
+リモートレポジトリへのpush
+```
+$ git remote -v
+$ git push origin master
+$ git push heroku master
+$ heroku pg:reset DATABASE
+$ heroku run rails db:migrate
+$ heroku run rails db:seed
+```
